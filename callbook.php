@@ -1,13 +1,11 @@
 <?php
 
 $json = file_get_contents('phone.json');
-
 $number_array = json_decode($json, true);
 // Повторяющиеся ключи складываем в отдельный массив
 $keys_array = array_keys($number_array[0]);
 	
 ?>
-
 <!doctype html>
 <html>
   <head>
@@ -21,8 +19,7 @@ $keys_array = array_keys($number_array[0]);
   <body>
 
     <h2>Адреса и телефоны</h2>
-
-    <table>
+	<table>
 	<tr>
 	<?php for($k=0; $k<count($keys_array); $k++){ ?>
 	<th><?php echo $keys_array[$k]; ?></th>
@@ -37,8 +34,6 @@ $keys_array = array_keys($number_array[0]);
 	</tr>
       
     <?php endforeach; ?>
-
 	</table>
-
-  </body>
+	</body>
 </html>
